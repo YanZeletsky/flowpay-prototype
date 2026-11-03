@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FlowPay — кликабельный прототип (каркасы)</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<aside>
+<h2>Экраны</h2>
+<a href="#" data-go="s1">1. Вход</a><a href="#" data-go="s2">2. Мои сделки</a><a href="#" data-go="s3">3. Новая сделка</a>
+<a href="#" data-go="s4">4. Оплата</a><a href="#" data-go="s5">5. Приёмка</a><a href="#" data-go="s6">6. Выплата</a><a href="#" data-go="s7">7. Спор</a>
+<p>Серый каркас (wireframe): без цветов, шрифтов и иконок. Нажимайте кнопки на экране телефона. Сценарий: первая безопасная сделка.</p>
+</aside>
+<div class="phone">
+
+<section class="screen" id="s1"><span class="step">Экран 1 · Вход</span><h1>FlowPay</h1>
+<div class="img">Логотип</div><div class="text">Безопасные сделки с незнакомыми людьми.</div>
+<label>Номер телефона</label><input placeholder="+7 ___ ___ __ __">
+<label>Код из SMS</label><input placeholder="••••">
+<button class="main" data-go="s2">Войти</button></section>
+
+<section class="screen" id="s2"><span class="step">Экран 2 · Мои сделки</span><h1>Мои сделки</h1>
+<div class="bar">Поиск по сделкам</div>
+<div class="card"><b>Велосипед · 30 000 ₽</b><span>Статус: ждёт приёмки</span><button data-go="s5">Открыть</button></div>
+<div class="card"><b>Дизайн логотипа · 8 000 ₽</b><span>Статус: завершена</span></div>
+<button class="main" data-go="s3">+ Новая сделка</button>
+<div class="tabs"><button data-go="s2">Сделки</button><button data-go="s2">Кошелёк</button><button data-go="s7">Споры</button><button data-go="s1">Выйти</button></div></section>
+
+<section class="screen" id="s3"><span class="step">Экран 3 · Новая сделка</span><h1>Новая сделка</h1>
+<label>Что покупаете</label><input placeholder="Название">
+<label>Сумма, ₽</label><input placeholder="30000">
+<label>Номер продавца</label><input placeholder="+7 ___ ___ __ __">
+<label>Срок приёмки</label><select><option>3 дня</option><option>7 дней</option></select>
+<div class="text">Комиссия 2%: 600 ₽</div>
+<button class="main" data-go="s4">Продолжить к оплате</button><button data-go="s2">Отмена</button></section>
+
+<section class="screen" id="s4"><span class="step">Экран 4 · Оплата</span><h1>Оплата</h1>
+<div class="card"><b>Велосипед</b><span>Сумма 30 000 ₽ + комиссия 600 ₽</span></div>
+<div class="text">Деньги будут заморожены на счёте FlowPay и уйдут продавцу после вашего подтверждения.</div>
+<label>Карта</label><input placeholder="•••• •••• •••• ••••">
+<button class="main" data-go="s5">Оплатить 30 600 ₽</button><button data-go="s3">Назад</button></section>
+
+<section class="screen" id="s5"><span class="step">Экран 5 · Приёмка</span><h1>Приёмка товара</h1>
+<div class="img">Статус: деньги заморожены</div>
+<div class="card"><b>Велосипед · 30 000 ₽</b><span>Осталось 2 дня на приёмку</span></div>
+<div class="text">Товар получен и соответствует описанию?</div>
+<button class="main" data-go="s6">Да, подтвердить</button>
+<button data-go="s7">Нет, открыть спор</button><button data-go="s2">К списку сделок</button></section>
+
+<section class="screen" id="s6"><span class="step">Экран 6 · Выплата</span><h1>Сделка завершена</h1>
+<div class="img">Галочка</div>
+<div class="text">Продавцу переведено 30 000 ₽. Спасибо, что пользуетесь FlowPay.</div>
+<button class="main" data-go="s2">К списку сделок</button></section>
+
+<section class="screen" id="s7"><span class="step">Экран 7 · Спор</span><h1>Спор по сделке</h1>
+<div class="card"><b>Велосипед · 30 000 ₽</b><span>Арбитр Скрепа проверяет дело</span></div>
+<label>Что не так</label><select><option>Не соответствует описанию</option><option>Не получил товар</option></select>
+<label>Комментарий</label><input placeholder="Опишите проблему">
+<div class="img">Загрузить фото</div>
+<button class="main" data-go="s2">Отправить арбитру</button><button data-go="s5">Отмена</button></section>
+
+</div>
+<script src="app.js"></script></body></html>
